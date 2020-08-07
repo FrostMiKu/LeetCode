@@ -34,3 +34,12 @@ public:
         return isSameTree(p->left,q->left) && isSameTree(p->right,q->right) && q->val==p->val;
     }
 };
+
+// 有点丑优化一下代码
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(p==nullptr) return q==nullptr;
+        return q!=nullptr && q->val==p->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+    }
+};
