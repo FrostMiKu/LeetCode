@@ -43,3 +43,11 @@ public:
         return q!=nullptr && q->val==p->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
     }
 };
+
+// 注意到上面那一行可以用三目运算符代替，一行解决
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        return p==nullptr?q==nullptr:q!=nullptr && q->val==p->val && isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+    }
+};
